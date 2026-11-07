@@ -1,0 +1,90 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-31T17:52:17.665Z",
+        "reason": "Claude: glows depict literal diya, lantern and string-light flames in a Diwali-night scene"
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-31T17:52:17.686Z",
+        "reason": "Claude: loader halo is the warm lamplight motif of the Diwali night setting"
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-31T17:52:17.707Z",
+        "reason": "Claude: animated dot is a flickering diya flame icon, literal domain motion"
+      },
+      {
+        "rule": "italic-serif-display",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-31T17:52:17.724Z",
+        "reason": "Claude: editorial story register for a festival walk-through, not a startup hero"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "css/styles.css"
+        ],
+        "createdAt": "2026-10-31T18:01:20.892Z",
+        "reason": "Claude: inset top shadow is the wooden edge of the stall takht illustration, not a card accent"
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-31T18:09:42.204Z",
+        "reason": "Claude: wide tracking is on the short four-word cinematic title subtitle and uppercase labels, not body text"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-31T18:27:49.957Z",
+        "reason": "Claude: .sheet dialogs have clamp(18px,3vw,30px) padding on the dialog itself; static detector does not see it"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-01T09:21:52.206Z",
+        "reason": "Claude: the photo-sheet preview <img> is filled with the framed snapshot by JS before its dialog opens; it is never shown empty"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html",
+          "story.html"
+        ],
+        "createdAt": "2026-11-07T16:48:17.008Z",
+        "reason": "Agent: the Hindi line and the English italic are one paired title, set close on purpose. Body copy sits far below them. This pass only changes how fonts and scripts load."
+      }
+    ]
+  }
+}

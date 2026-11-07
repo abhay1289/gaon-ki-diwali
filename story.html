@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Five Nights of Light</title>
+  <meta name="description" content="An interactive journey through the five days of Diwali. Light diyas, draw a rangoli, set off fireworks and send a greeting.">
+  <meta name="theme-color" content="#07060d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Five nights of light">
+  <meta property="og:description" content="An interactive journey through the five days of Diwali.">
+  <meta property="og:url" content="https://abhay1289.github.io/gaon-ki-diwali/story.html">
+  <meta property="og:image" content="https://abhay1289.github.io/gaon-ki-diwali/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Five nights of light">
+  <meta name="twitter:description" content="An interactive journey through the five days of Diwali.">
+  <meta name="twitter:image" content="https://abhay1289.github.io/gaon-ki-diwali/assets/og.jpg">
+  <link rel="preload" href="assets/fonts/f04.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/f21.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/f22.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="preloader" data-preloader aria-hidden="true">
+    <p class="preloader__deva" lang="hi">दीपावली</p>
+    <div class="preloader__track"><div class="preloader__bar" data-preloader-bar></div></div>
+    <p class="preloader__note">Lighting the lamps</p>
+  </div>
+
+  <button class="sound-toggle" type="button" aria-pressed="false" data-sound-toggle>
+    <span class="sound-toggle__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="sound-toggle__label">Sound off</span>
+  </button>
+
+  <nav class="day-rail" aria-label="The five days">
+    <a href="#day-1" data-rail="day-1"><span>01</span><em>Dhanteras</em></a>
+    <a href="#day-2" data-rail="day-2"><span>02</span><em>Choti Diwali</em></a>
+    <a href="#day-3" data-rail="day-3"><span>03</span><em>Lakshmi Puja</em></a>
+    <a href="#day-4" data-rail="day-4"><span>04</span><em>Govardhan</em></a>
+    <a href="#day-5" data-rail="day-5"><span>05</span><em>Bhai Dooj</em></a>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
+      <p class="hero__deva" lang="hi" aria-hidden="true">दीपावली</p>
+      <div class="hero__copy">
+        <p class="eyebrow" data-hero-from hidden></p>
+        <h1 class="hero__title" data-split-reveal>Five nights of light</h1>
+        <p class="hero__lede" data-hero-lede>A walk through Diwali, one evening at a time. Light the lamps, draw at the doorway and fill the sky.</p>
+      </div>
+      <a class="scroll-cue" href="#intro" data-hero-lede><span>Scroll to begin</span><i aria-hidden="true"></i></a>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro" id="intro">
+      <p class="intro__text" data-split-reveal>On the new-moon night of Kartik, the darkest of the autumn, homes across India and around the world answer the dark with rows of small clay lamps.</p>
+      <p class="intro__sub" data-reveal>Hindus, Sikhs, Jains and many Buddhists keep the festival, each with their own story. What they share is the light.</p>
+    </section>
+
+    <!-- DAY 1 -->
+    <section class="day day--one" id="day-1" data-day>
+      <div class="coins" data-coins aria-hidden="true">
+        <div class="coin" style="--x:12%;--y:18%;--s:1"></div>
+        <div class="coin" style="--x:78%;--y:12%;--s:.7"></div>
+        <div class="coin" style="--x:64%;--y:62%;--s:1.25"></div>
+        <div class="coin" style="--x:22%;--y:74%;--s:.85"></div>
+        <div class="coin" style="--x:88%;--y:44%;--s:.6"></div>
+        <div class="coin" style="--x:40%;--y:30%;--s:.55"></div>
+        <div class="coin" style="--x:6%;--y:46%;--s:.5"></div>
+      </div>
+      <div class="day__inner" data-story-section>
+        <p class="day__num" data-reveal-item>Day 01</p>
+        <h2 class="day__title" data-reveal-item>Dhanteras</h2>
+        <p class="day__deva" lang="hi" data-reveal-item>धनतेरस</p>
+        <p class="day__body" data-reveal-item>The festival opens with prosperity. Houses are swept and washed, and families buy something new in gold, silver or brass, even a single spoon, for luck. At dusk a lamp goes at the threshold for Lakshmi and for Dhanvantari, physician of the gods.</p>
+      </div>
+    </section>
+
+    <!-- MELA BAZAAR -->
+    <section class="bazaar" id="bazaar" data-bazaar>
+      <div class="bazaar__head" data-story-section>
+        <p class="day__num" data-reveal-item>Dhanteras evening · The mela</p>
+        <h2 class="bazaar__title" data-reveal-item>Walk the bazaar</h2>
+        <p class="day__body" data-reveal-item>Every town puts up a mela in the week before Diwali. Step up to a stall, look at what's on the counter and fill your jhola for the five nights.</p>
+      </div>
+      <div class="bazaar__viewport" data-bazaar-viewport>
+        <div class="bazaar__track" data-bazaar-track>
+          <!-- stalls are rendered by js/bazaar.js -->
+        </div>
+      </div>
+      <p class="bazaar__hint" data-bazaar-hint>Keep scrolling to walk the lane · tap a stall to look closer</p>
+    </section>
+
+    <button class="jhola" type="button" data-jhola-open hidden>
+      <span class="jhola__icon" aria-hidden="true"></span>
+      <span>Jhola</span>
+      <strong data-jhola-count>0</strong>
+    </button>
+
+    <dialog class="stall-dialog" data-stall-dialog aria-labelledby="stall-dialog-title">
+      <div class="stall-dialog__inner">
+        <button class="stall-dialog__close" type="button" data-dialog-close aria-label="Close">×</button>
+        <canvas class="stall-dialog__art" data-dialog-art aria-hidden="true"></canvas>
+        <p class="stall-dialog__deva" lang="hi" data-dialog-deva></p>
+        <h3 class="stall-dialog__title" id="stall-dialog-title" data-dialog-title></h3>
+        <p class="stall-dialog__desc" data-dialog-desc></p>
+        <ul class="stall-dialog__items" data-dialog-items></ul>
+      </div>
+    </dialog>
+
+    <dialog class="stall-dialog jhola-dialog" data-jhola-dialog aria-labelledby="jhola-title">
+      <div class="stall-dialog__inner">
+        <button class="stall-dialog__close" type="button" data-dialog-close aria-label="Close">×</button>
+        <h3 class="stall-dialog__title" id="jhola-title">Your jhola</h3>
+        <ul class="jhola__list" data-jhola-list></ul>
+        <p class="jhola__total">Total <strong data-jhola-total>₹0</strong></p>
+        <p class="jhola__note">Prices are for the experience only. Nothing is charged.</p>
+      </div>
+    </dialog>
+
+    <!-- DAY 2: DIYAS -->
+    <section class="day day--two" id="day-2" data-day>
+      <div class="day__inner day__inner--wide" data-story-section>
+        <p class="day__num" data-reveal-item>Day 02</p>
+        <h2 class="day__title" data-reveal-item>Choti Diwali</h2>
+        <p class="day__deva" lang="hi" data-reveal-item>नरक चतुर्दशी</p>
+        <p class="day__body" data-reveal-item>Krishna defeats the demon Narakasura and frees the people he held captive. Before dawn there is an oil bath, and by evening the first rows of diyas line the windowsills.</p>
+      </div>
+      <div class="diyas" data-diyas>
+        <canvas class="diyas__canvas" data-diya-canvas role="img" aria-label="A row of nine clay diyas on a stone ledge. Tap a diya to light it."></canvas>
+        <div class="diyas__ui">
+          <p class="diyas__count" aria-live="polite"><strong data-diya-count>0</strong> of <span data-diya-total>9</span> lamps lit</p>
+          <p class="diyas__hint" data-diya-hint>Tap a diya to light it</p>
+          <button class="btn btn--ghost" type="button" data-diya-all>Light them all</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAY 3: RANGOLI -->
+    <section class="day day--three" id="day-3" data-day>
+      <div class="split">
+        <div class="day__inner" data-story-section>
+          <p class="day__num" data-reveal-item>Day 03</p>
+          <h2 class="day__title" data-reveal-item>Lakshmi Puja</h2>
+          <p class="day__deva" lang="hi" data-reveal-item>लक्ष्मी पूजा</p>
+          <p class="day__body" data-reveal-item>The main night. Rama comes home to Ayodhya, and Lakshmi walks the streets looking for the brightest, cleanest homes. At the door, a rangoli of coloured powder welcomes her in.</p>
+          <p class="day__body day__body--quiet" data-reveal-item>Draw anywhere on the floor. Every stroke repeats around the centre, the way rangoli is laid out by hand.</p>
+        </div>
+        <div class="rangoli" data-rangoli>
+          <div class="rangoli__floor">
+            <canvas class="rangoli__canvas" data-rangoli-canvas role="img" aria-label="Rangoli drawing area. Drag to draw a symmetric pattern."></canvas>
+            <svg class="rangoli__guide" data-rangoli-guide viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="12"/><circle cx="50" cy="50" r="26"/><circle cx="50" cy="50" r="40"/>
+              <path d="M50 4v92M4 50h92M17.5 17.5l65 65M82.5 17.5l-65 65"/>
+            </svg>
+          </div>
+          <div class="rangoli__tools">
+            <div class="swatches" role="radiogroup" aria-label="Powder colour" data-swatches>
+              <button type="button" role="radio" aria-checked="true"  aria-label="Marigold"  style="--c:#f4a020" data-color="#f4a020"></button>
+              <button type="button" role="radio" aria-checked="false" aria-label="Vermilion" style="--c:#e0402a" data-color="#e0402a"></button>
+              <button type="button" role="radio" aria-checked="false" aria-label="Magenta"   style="--c:#d6247a" data-color="#d6247a"></button>
+              <button type="button" role="radio" aria-checked="false" aria-label="Peacock"   style="--c:#1aa3a3" data-color="#1aa3a3"></button>
+              <button type="button" role="radio" aria-checked="false" aria-label="Leaf"      style="--c:#58a83a" data-color="#58a83a"></button>
+              <button type="button" role="radio" aria-checked="false" aria-label="Indigo"    style="--c:#4b4fc9" data-color="#4b4fc9"></button>
+              <button type="button" role="radio" aria-checked="false" aria-label="Rice white" style="--c:#f3eadb" data-color="#f3eadb"></button>
+            </div>
+            <label class="size">
+              <span>Line</span>
+              <input type="range" min="2" max="18" value="7" data-rangoli-size>
+            </label>
+            <div class="rangoli__actions">
+              <button class="btn btn--ghost" type="button" data-rangoli-surprise>Draw one for me</button>
+              <button class="btn btn--quiet" type="button" data-rangoli-clear>Sweep clean</button>
+              <button class="btn btn--quiet" type="button" data-rangoli-save>Save image</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NIGHT SKY: FIREWORKS -->
+    <section class="sky" id="sky" data-sky>
+      <canvas class="sky__canvas" data-sky-canvas role="img" aria-label="Night sky over rooftops. Tap the sky to launch fireworks."></canvas>
+      <svg class="sky__skyline" viewBox="0 0 1440 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <path d="M0 220V150h60v-30h40v30h50V110h20l10-20 10 20h20v40h70v-60h90v60h30V70l22-40 8-20 8 20 22 40v80h40v-45h55v45h60v-80h30l15-25 15 25h30v80h80v-55h70v55h40V95h20l12-30 12 30h20v55h65v-40h85v40h55v-70h50v70h60v-35h70v35h40V220Z"/>
+        <g class="sky__lamps">
+          <circle cx="78" cy="118" r="2"/><circle cx="168" cy="106" r="2"/><circle cx="292" cy="96" r="2"/><circle cx="330" cy="96" r="2"/>
+          <circle cx="438" cy="78" r="2.4"/><circle cx="532" cy="112" r="2"/><circle cx="625" cy="78" r="2"/><circle cx="672" cy="78" r="2"/>
+          <circle cx="790" cy="102" r="2"/><circle cx="890" cy="102" r="2"/><circle cx="963" cy="72" r="2.4"/><circle cx="1088" cy="118" r="2"/>
+          <circle cx="1190" cy="88" r="2"/><circle cx="1240" cy="88" r="2"/><circle cx="1350" cy="122" r="2"/>
+        </g>
+      </svg>
+      <div class="sky__copy" data-story-section>
+        <p class="day__num" data-reveal-item>Later that night</p>
+        <h2 class="sky__title" data-reveal-item>Then the sky</h2>
+        <p class="sky__hint" data-reveal-item>Tap anywhere in the sky to launch a rocket</p>
+      </div>
+      <div class="sky__ui">
+        <button class="btn btn--ghost" type="button" data-sky-anar>Light an anar</button>
+        <button class="btn btn--ghost" type="button" data-sky-finale>Grand finale</button>
+      </div>
+    </section>
+
+    <!-- DAY 4 -->
+    <section class="day day--four" id="day-4" data-day>
+      <div class="day__inner" data-story-section>
+        <p class="day__num" data-reveal-item>Day 04</p>
+        <h2 class="day__title" data-reveal-item>Govardhan Puja</h2>
+        <p class="day__deva" lang="hi" data-reveal-item>गोवर्धन पूजा</p>
+        <p class="day__body" data-reveal-item>Krishna lifts Govardhan hill on one finger to shelter the villagers from Indra's storm. In thanks, temples build Annakut, a mountain of food, often counted as <em>chhappan bhog</em>: fifty-six offerings. In Gujarat it is also the new year.</p>
+      </div>
+      <div class="annakut" data-annakut>
+        <p class="annakut__num"><span data-annakut-count>0</span></p>
+        <p class="annakut__label">offerings in the chhappan bhog</p>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__row" data-marquee="-1">Kaju katli · Besan ladoo · Jalebi · Gulab jamun · Kheer · Shrikhand · Malpua · Puran poli · Chakli · Karanji · Mohanthal · Rasgulla ·&nbsp;</div>
+        <div class="marquee__row marquee__row--alt" data-marquee="1">Poha · Puri · Chole · Kadhi · Khichdi · Shakarpara · Namak pare · Peda · Barfi · Sev · Halwa · Basundi ·&nbsp;</div>
+      </div>
+    </section>
+
+    <!-- DAY 5 -->
+    <section class="day day--five" id="day-5" data-day>
+      <div class="day__inner" data-story-section>
+        <p class="day__num" data-reveal-item>Day 05</p>
+        <h2 class="day__title" data-reveal-item>Bhai Dooj</h2>
+        <p class="day__deva" lang="hi" data-reveal-item>भाई दूज</p>
+        <p class="day__body" data-reveal-item>Yama visits his sister Yamuna, and she welcomes him with a tilak and a meal. Sisters and brothers do the same today, and the festival closes the way it began: at home, with family.</p>
+      </div>
+    </section>
+
+    <!-- GREETING -->
+    <section class="greeting" id="greeting">
+      <div class="greeting__card" data-story-section>
+        <p class="greeting__deva" lang="hi" data-reveal-item>शुभ दीपावली</p>
+        <h2 class="greeting__title" data-reveal-item>Send the light on</h2>
+        <p class="greeting__body" data-reveal-item>Add your name and share this page. Whoever opens your link will see your Diwali wishes when they arrive.</p>
+        <form class="greeting__form" data-greeting-form data-reveal-item>
+          <label class="field">
+            <span>Your name</span>
+            <input type="text" name="from" maxlength="40" autocomplete="name" placeholder="e.g. The Sharma family" required>
+          </label>
+          <button class="btn btn--solid" type="submit">Make my link</button>
+        </form>
+        <p class="greeting__result" data-greeting-result aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made for Diwali 2026 · Sunday 8 November</p>
+    <a href="#top">Back to the first lamp</a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/flame.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/goods.js"></script>
+  <script src="js/bazaar.js"></script>
+  <script src="js/diyas.js"></script>
+  <script src="js/rangoli.js"></script>
+  <script src="js/fireworks.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

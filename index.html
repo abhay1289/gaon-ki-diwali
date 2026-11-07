@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gaon ki Diwali</title>
+  <meta name="description" content="Walk through an Indian village on Diwali night: lamplit lanes, a rangoli courtyard, the potter's yard, the haat, the temple aarti, floating diyas and fireworks.">
+  <meta name="theme-color" content="#07060d">
+  <link rel="canonical" href="https://abhay1289.github.io/gaon-ki-diwali/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Gaon ki Diwali">
+  <meta property="og:title" content="गाँव की दिवाली · Diwali in the village">
+  <meta property="og:description" content="A walk through one village on the night of Lakshmi Puja, from the well and the cowshed to the temple and the rooftop.">
+  <meta property="og:url" content="https://abhay1289.github.io/gaon-ki-diwali/">
+  <meta property="og:image" content="https://abhay1289.github.io/gaon-ki-diwali/assets/og.jpg">
+  <meta property="og:image:secure_url" content="https://abhay1289.github.io/gaon-ki-diwali/assets/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A lamplit Indian village on Diwali night, seen from the rooftops.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="गाँव की दिवाली · Diwali in the village">
+  <meta name="twitter:description" content="A walk through one village on the night of Lakshmi Puja, from the well and the cowshed to the temple and the rooftop.">
+  <meta name="twitter:image" content="https://abhay1289.github.io/gaon-ki-diwali/assets/og.jpg">
+  <meta name="twitter:image:alt" content="A lamplit Indian village on Diwali night, seen from the rooftops.">
+  <link rel="preload" href="assets/fonts/f04.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/f13.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/f21.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/f22.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tour.css">
+  <link rel="modulepreload" href="vendor/three/build/three.min.js">
+  <link rel="modulepreload" href="js/tour/main.js">
+  <link rel="modulepreload" href="js/tour/village.js">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three/build/three.min.js",
+        "three/addons/": "./vendor/three/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body class="at-gate">
+  <canvas class="scene" data-scene aria-label="A 3D Indian village on Diwali night. Drag to look around; tap the sky to launch a rocket."></canvas>
+
+  <!-- loader / entrance -->
+  <div class="loader" data-loader>
+    <div class="loader__inner">
+      <p class="loader__deva" lang="hi">गाँव की दिवाली</p>
+      <h1 class="loader__title">Diwali in the village</h1>
+      <p class="loader__lede">A walk through one village on the night of Lakshmi Puja, from the well and the cowshed to the temple and the rooftop. Fifteen stops: the lanes, two homes, the fair and the market. Wander off the path whenever you like, and look out for the hidden diyas.</p>
+      <div class="loader__track"><div class="loader__bar" data-loader-bar></div></div>
+      <p class="loader__sound" data-gate-sound hidden><span aria-hidden="true">♪</span> Tap anywhere to hear the fireworks</p>
+      <p class="loader__status" data-loader-status aria-live="polite">Building the village</p>
+      <p class="loader__back" data-me-back hidden></p>
+      <p class="loader__date" data-countdown hidden></p>
+      <label class="loader__name">
+        <span><span lang="hi">आपका नाम</span> · What should the village call you? <em>optional</em></span>
+        <input data-me-name maxlength="22" autocomplete="given-name" placeholder="e.g. Abhay, or दादी" enterkeyhint="go">
+      </label>
+      <div class="loader__actions">
+        <button class="btn btn--solid" type="button" data-enter="sound" disabled>Enter with sound</button>
+        <button class="btn btn--ghost" type="button" data-enter="quiet" disabled>Enter quietly</button>
+      </div>
+      <p class="loader__yours"><button type="button" class="loader__over" data-yours-open>Make it yours: family, region, your own house</button></p>
+      <p class="loader__foot">Best with headphones. Works on phones too. <a href="story.html">Or read the five days of Diwali</a> · <a href="assets/audio/CREDITS.md">Sound credits</a></p>
+    </div>
+  </div>
+
+  <!-- top bar -->
+  <header class="top">
+    <p class="brand"><b lang="hi">गाँव की दिवाली</b><span>Diwali in the village</span></p>
+    <div class="top__actions">
+      <button class="chip chip--burn" type="button" data-burn><span class="bag__icon" aria-hidden="true"></span><span lang="hi">पटाखे जलाएँ</span><span class="chip__en">Burn crackers</span></button>
+      <button class="chip chip--show" type="button" data-show aria-label="Fireworks show"><span class="chip__burst" aria-hidden="true"></span><span>Fireworks show</span></button>
+      <button class="chip chip--explore" type="button" data-places-open><span class="chip__spark" aria-hidden="true">✦</span>Explore</button>
+      <div class="more">
+        <button class="chip chip--icon" type="button" data-more aria-expanded="false" aria-haspopup="true" aria-label="More">⋯</button>
+        <div class="menu" data-menu hidden role="menu">
+          <button type="button" role="menuitem" data-yours-open><span class="chip__home" aria-hidden="true"></span><span>Make it yours</span></button>
+          <button type="button" role="menuitem" data-invite-open><span class="chip__link" aria-hidden="true"></span><span>Invite someone</span></button>
+          <button type="button" role="menuitem" data-recap-open><span class="chip__diya" aria-hidden="true"></span><span>My Diwali card</span></button>
+          <button type="button" role="menuitem" data-days-open><span class="chip__diya" aria-hidden="true"></span><span>Five days of Diwali</span></button>
+          <button type="button" role="menuitem" data-buddy aria-pressed="true"><span class="chip__note" aria-hidden="true">☺</span><span>Chhotu: with you</span></button>
+          <button type="button" role="menuitem" data-bgsong aria-pressed="true"><span class="chip__note" aria-hidden="true">♫</span><span>Background song: on</span></button>
+          <button type="button" role="menuitem" data-music-open aria-pressed="false"><span class="chip__note" aria-hidden="true">♪</span><span>Music</span></button>
+          <button type="button" role="menuitem" data-dawn aria-pressed="false"><span class="chip__sun" aria-hidden="true"></span><span>Dawn</span></button>
+          <button type="button" role="menuitem" data-menu-lantern><span class="menu__lantern" aria-hidden="true"></span><span>Release a sky lantern</span></button>
+          <button type="button" role="menuitem" data-menu-map aria-pressed="false"><span class="menu__map" aria-hidden="true"></span><span>Map</span></button>
+          <button type="button" role="menuitem" data-photo><span class="chip__cam" aria-hidden="true"></span><span>Photo</span></button>
+          <button type="button" role="menuitem" data-guide aria-pressed="false"><span class="chip__voice" aria-hidden="true"></span><span data-guide-label>Voice guide: off</span></button>
+          <button type="button" role="menuitem" data-share-view><span class="chip__link" aria-hidden="true"></span><span>Share this place</span></button>
+          <button type="button" role="menuitem" data-tips-open><span class="chip__q" aria-hidden="true">?</span><span>How to explore</span></button>
+          <button type="button" role="menuitem" data-clean aria-pressed="false" title="Hide panels (H)"><span class="chip__eye" aria-hidden="true"></span><span>Clean view</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- stop panel -->
+  <section class="panel" data-panel hidden aria-live="polite">
+    <div class="panel__head">
+      <p class="panel__num" data-stop-num>1 / 15</p>
+      <p class="panel__hi" lang="hi" data-stop-hi></p>
+    </div>
+    <h2 class="panel__en" data-stop-en></h2>
+    <p class="panel__text" data-stop-text></p>
+    <div class="panel__row">
+      <div class="panel__acts">
+        <button class="btn btn--solid" type="button" data-action></button>
+        <button class="btn btn--ghost" type="button" data-action2 hidden></button>
+      </div>
+      <div class="panel__nav">
+        <button class="btn btn--ghost" type="button" data-prev aria-label="Previous place">Back</button>
+        <button class="btn btn--ghost" type="button" data-next>Next</button>
+      </div>
+    </div>
+    <button class="panel__free" type="button" aria-pressed="false" data-free>Walk freely</button>
+  </section>
+
+  <!-- at the cracker ground: your crackers, lit in the middle of the ring -->
+  <section class="maidan" data-maidan hidden aria-label="The cracker ground">
+    <header class="maidan__head">
+      <div><b lang="hi">पटाखा मैदान</b><span>The cracker ground · tap a cracker to light it in the ring</span></div>
+      <div class="maidan__actions">
+        <button class="btn btn--ghost" type="button" data-maidan-buy>Buy more · और ख़रीदें</button>
+        <button class="btn btn--ghost" type="button" data-maidan-leave>वापस · Leave</button>
+      </div>
+    </header>
+    <div class="maidan__list" data-maidan-list></div>
+  </section>
+
+  <!-- crackers you bought, ready to light -->
+  <div class="bag" data-bag hidden>
+    <button class="bag__btn" type="button" data-bag-open aria-expanded="false"><span class="bag__icon" aria-hidden="true"></span><span>Your crackers</span><b data-bag-count>0</b></button>
+    <div class="bag__tray" data-bag-tray hidden></div>
+  </div>
+
+  <!-- hidden-diya hunt counter and sky-lantern button -->
+  <div class="hud" data-hud hidden>
+    <span class="hud__diya" aria-hidden="true"></span>
+    <span><strong data-hunt-count>0</strong> / <span data-hunt-total>12</span> hidden diyas lit</span>
+  </div>
+  <!-- Diwali songs: YouTube's own player, kept visible while it plays -->
+  <section class="music" data-music hidden aria-label="Diwali songs">
+    <div class="music__screen"><div id="yt-player"></div></div>
+    <div class="music__bar">
+      <div class="music__now">
+        <small>Now playing</small>
+        <b data-music-title>Ram Aayenge</b>
+      </div>
+      <div class="music__ctrl">
+        <button type="button" data-music-prev aria-label="Previous song">⏮</button>
+        <button type="button" data-music-play aria-label="Play or pause">▶</button>
+        <button type="button" data-music-next aria-label="Next song">⏭</button>
+        <button type="button" data-music-list aria-expanded="false" aria-label="Show song list">☰</button>
+        <button type="button" data-music-close aria-label="Stop the music and close">×</button>
+      </div>
+    </div>
+    <label class="music__vol"><span>Volume</span><input type="range" min="0" max="100" value="70" data-music-vol></label>
+    <div class="music__list" data-music-panel hidden>
+      <ol data-music-tracks></ol>
+      <form class="music__paste" data-music-paste>
+        <input name="link" placeholder="Paste a YouTube song or playlist link" aria-label="YouTube link">
+        <button class="btn btn--ghost" type="submit">Play</button>
+      </form>
+      <p class="music__note" data-music-note>Songs stream from YouTube's official player. During the aarti it plays the Lakshmi aarti; under the temple bhajan it dips.</p>
+    </div>
+  </section>
+
+  <!-- progress along the walk: fills as you scroll; each dot is a stop -->
+  <nav class="rail" data-rail hidden aria-label="Stops along the walk"><span class="rail__track"><i data-rail-fill></i></span></nav>
+
+  <!-- village map: click a numbered stop to go there -->
+  <div class="minimap" data-minimap hidden>
+    <canvas class="minimap__canvas" data-minimap-canvas width="200" height="270" aria-label="Map of the village with numbered stops. Click a stop to walk there."></canvas>
+  </div>
+  <button class="chip minimap-toggle" type="button" data-minimap-toggle aria-pressed="false" hidden>Map</button>
+  <button class="lantern-btn" type="button" data-lantern hidden>
+    <span class="lantern-btn__icon" aria-hidden="true"></span>
+    Release a sky lantern
+  </button>
+
+  <div class="letterbox" data-letterbox aria-hidden="true"><i></i><i></i></div>
+  <!-- opening title, drawn in over the fly-in -->
+  <div class="title-card" data-title hidden aria-hidden="true">
+    <p class="title-card__deva" lang="hi"><span>गाँव</span> <span>की</span> <span>दिवाली</span></p>
+    <p class="title-card__en">Diwali in the village</p>
+    <p class="title-card__skip">Tap to skip</p>
+  </div>
+  <div class="shutter" data-shutter aria-hidden="true"></div>
+  <div class="bubble" data-bubble hidden><b lang="hi" data-bubble-hi></b><small data-bubble-en></small></div>
+  <!-- captions for ceremonies such as the aarti -->
+  <p class="caption" data-caption aria-live="polite"></p>
+
+  <p class="hint" data-hint>Scroll to walk through the village · drag to look around · tap the sky for a rocket</p>
+  <p class="toast" data-toast role="status"></p>
+
+  <!-- touch pad for free walking -->
+  <div class="pad" data-pad hidden>
+    <button type="button" data-move="1,0" aria-label="Walk forward">▲</button>
+    <button type="button" data-move="0,1" aria-label="Turn left">◀</button>
+    <button type="button" data-move="-1,0" aria-label="Walk back">▼</button>
+    <button type="button" data-move="0,-1" aria-label="Turn right">▶</button>
+  </div>
+
+  <!-- places list -->
+  <dialog class="places" data-places aria-labelledby="places-title">
+    <div class="places__inner">
+      <button class="places__close" type="button" data-close aria-label="Close">×</button>
+      <h2 id="places-title">Explore the village</h2>
+      <button class="places__day" type="button" data-days-open><span data-day-label>लक्ष्मी पूजा · Lakshmi Puja</span><em>Change day</em></button>
+      <h3 class="places__sub"><span lang="hi">करने को</span> · Things to do</h3>
+      <div class="hub" data-hub>
+        <button type="button" data-hub-go="yours"><b lang="hi">मेरी दिवाली</b><span>Make it yours: family, region, your house</span></button>
+        <button type="button" data-hub-go="days"><b lang="hi">पाँच दिन</b><span>Dhanteras to Bhai Dooj</span></button>
+        <button type="button" data-hub-go="bless"><b lang="hi">दादी का आशीर्वाद</b><span>A blessing for you, by name</span></button>
+        <button type="button" data-hub-go="write"><b lang="hi">फुलझड़ी से लिखो</b><span>Write your name in the air</span></button>
+        <button type="button" data-hub-go="taash"><b lang="hi">ताश की बाज़ी</b><span>Higher or lower, with the uncles</span></button>
+        <button type="button" data-hub-go="balloons"><b lang="hi">गुब्बारे फोड़ो</b><span>Ten pellets at the mela's balloon board</span></button>
+        <button type="button" data-hub-go="puri"><b lang="hi">पूरियाँ तलो</b><span>Take each puri out when it's golden</span></button>
+        <button type="button" data-hub-go="share"><b lang="hi">मिठाई बाँटो</b><span>Give sweets to everyone you meet</span></button>
+        <button type="button" data-hub-go="draw"><b lang="hi">उँगली से रंगोली</b><span>Draw a rangoli by hand</span></button>
+        <button type="button" data-hub-go="aarti"><b lang="hi">आरती</b><span>Do the Lakshmi aarti yourself</span></button>
+        <button type="button" data-hub-go="name"><b lang="hi">आसमान में नाम</b><span>Your name in fireworks</span></button>
+        <button type="button" data-hub-go="gift"><b lang="hi">मिठाई भेजो</b><span>Send someone a box of sweets</span></button>
+        <button type="button" data-hub-go="diary"><b lang="hi">मेरी डायरी</b><span>Your Diwali, year after year</span></button>
+        <button type="button" data-hub-go="morning"><b lang="hi">अगली सुबह</b><span>The morning after Diwali</span></button>
+        <button type="button" data-hub-go="invite"><b lang="hi">न्योता</b><span>Invite someone by name</span></button>
+        <button type="button" data-hub-go="card"><b lang="hi">मेरा कार्ड</b><span>Your Diwali card</span></button>
+        <button type="button" data-hub-go="guide"><b lang="hi">दादी की आवाज़</b><span data-hub-guide>Voice guide: off</span></button>
+        <button type="button" data-hub-go="photo"><b lang="hi">तस्वीर</b><span>A photo with a Diwali frame</span></button>
+        <button type="button" data-hub-go="burn"><b lang="hi">पटाखे</b><span>Buy crackers and light them</span></button>
+        <button type="button" data-hub-go="show"><b lang="hi">आतिशबाज़ी</b><span>Watch from the rooftops</span></button>
+      </div>
+      <h3 class="places__sub"><span lang="hi">जगहें</span> · Places</h3>
+      <ol class="places__list" data-places-list></ol>
+      <h3 class="places__sub"><span lang="hi">दुकानें</span> · Shops and stalls</h3>
+      <ul class="places__list places__shops" data-shops-list></ul>
+      <a class="places__story" href="story.html">The five days of Diwali, as a story →</a>
+    </div>
+  </dialog>
+
+  <!-- a shop counter: tap any stall or shop in the village -->
+  <dialog class="sheet shop-sheet" data-shop-dialog aria-labelledby="shop-title">
+    <div class="sheet__inner">
+      <header class="sheet__head">
+        <div>
+          <p class="sheet__kicker" lang="hi" data-shop-hi></p>
+          <h2 class="sheet__title" id="shop-title" data-shop-title></h2>
+        </div>
+        <button class="sheet__close" type="button" data-shop-close aria-label="Close">×</button>
+      </header>
+      <p class="shop__note" data-shop-note></p>
+      <div class="counter" data-counter hidden></div>
+      <ul class="shop__items" data-shop-items></ul>
+      <div class="shop__foot">
+        <span>बटुआ · Batua <b data-batua>₹0</b></span>
+        <span>Jhola <b data-jhola-sum>₹0</b></span>
+        <button class="btn btn--ghost shop__parchi" type="button" data-parchi hidden>पर्ची · The bill</button>
+        <small>Play money from Dadi's shagun. Nothing is really charged.</small>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- rangoli designer -->
+  <dialog class="sheet rangoli-sheet" data-rangoli-dialog aria-labelledby="rg-title">
+    <form method="dialog" class="sheet__inner">
+      <header class="sheet__head">
+        <div>
+          <p class="sheet__kicker"><span lang="hi">आँगन की रंगोली</span> · live courtyard floor</p>
+          <h2 class="sheet__title" id="rg-title">Shape the courtyard rangoli</h2>
+        </div>
+        <button class="sheet__close" value="cancel" aria-label="Close">×</button>
+      </header>
+      <div class="rg">
+        <div class="rg__preview">
+          <canvas data-rg-canvas width="512" height="512" aria-label="Preview of your rangoli design"></canvas>
+          <p class="rg__note">Apply it and the 3D floor of the family's aangan changes beneath the tulsi and the diyas.</p>
+        </div>
+        <div class="rg__controls">
+          <fieldset class="rg__group">
+            <legend>Design</legend>
+            <div class="rg__options" data-rg-styles role="radiogroup"></div>
+          </fieldset>
+          <fieldset class="rg__group">
+            <legend>Natural pigments</legend>
+            <div class="rg__options rg__options--pal" data-rg-palettes role="radiogroup"></div>
+          </fieldset>
+          <div class="rg__sliders">
+            <label>Petals <output data-rg-petals-out>16</output><input type="range" min="8" max="28" step="2" value="16" data-rg-petals></label>
+            <label>Rings <output data-rg-rings-out>4</output><input type="range" min="2" max="6" value="4" data-rg-rings></label>
+          </div>
+          <fieldset class="rg__group">
+            <legend>Apply to</legend>
+            <div class="rg__options" data-rg-targets role="radiogroup">
+              <button type="button" class="rg__opt" role="radio" aria-checked="true" data-target="aangan"><b>The family aangan</b><small>Beside the tulsi chaura</small></button>
+              <button type="button" class="rg__opt" role="radio" aria-checked="false" data-target="chaupal"><b>The chaupal</b><small>Round the old banyan</small></button>
+            </div>
+          </fieldset>
+          <div class="sheet__actions">
+            <button class="btn btn--ghost" type="button" data-rg-reset>Reset to the original</button>
+            <button class="btn btn--solid" type="button" data-rg-apply>Apply rangoli</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- sky lantern wish -->
+  <dialog class="sheet wish-sheet" data-wish-dialog aria-labelledby="wish-title">
+    <form class="sheet__inner" data-wish-form>
+      <header class="sheet__head">
+        <div>
+          <p class="sheet__kicker"><span lang="hi">आकाश कंदील</span> · a wish for the sky</p>
+          <h2 class="sheet__title" id="wish-title">Release a sky lantern</h2>
+        </div>
+        <button class="sheet__close" type="button" data-wish-close aria-label="Close">×</button>
+      </header>
+      <label class="field">
+        <span>Your name or family name</span>
+        <input name="who" maxlength="40" placeholder="e.g. Sharma Parivar" autocomplete="name">
+      </label>
+      <label class="field">
+        <span>Diwali blessing or sankalpa</span>
+        <textarea name="wish" maxlength="140" rows="3" placeholder="Write a prayer or a greeting to rise over the village"></textarea>
+      </label>
+      <div class="sheet__actions">
+        <button class="btn btn--ghost" type="button" data-wish-close>Cancel</button>
+        <button class="btn btn--solid" type="submit">Light it and let it go</button>
+      </div>
+      <div class="wishes">
+        <h3>Wishes drifting over the village</h3>
+        <ul class="wishes__list" data-wish-list></ul>
+        <p class="wishes__note">Your wishes stay in this browser only.</p>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="sheet wish-sheet" data-name-dialog aria-labelledby="name-title">
+    <form class="sheet__inner" data-name-form>
+      <header class="sheet__head">
+        <div>
+          <p class="sheet__kicker"><span lang="hi">आसमान में आपका नाम</span> · a greeting in fireworks</p>
+          <h2 class="sheet__title" id="name-title">Write your name in the sky</h2>
+        </div>
+        <button class="sheet__close" type="button" data-name-close aria-label="Close">×</button>
+      </header>
+      <label class="field">
+        <span>Your name, or the name of someone you're wishing</span>
+        <input name="who" maxlength="22" placeholder="e.g. Sharma Parivar, or दादी" autocomplete="off" data-name-input required>
+      </label>
+      <div class="sheet__actions">
+        <button class="btn btn--ghost" type="button" data-name-close>Cancel</button>
+        <button class="btn btn--solid" type="submit">Light the rocket</button>
+      </div>
+    </form>
+  </dialog>
+  <div class="tips" data-tips hidden role="dialog" aria-modal="false" aria-labelledby="tips-title">
+    <p class="tips__kicker" lang="hi">गाँव घूमने का तरीका</p>
+    <h2 class="tips__title" id="tips-title" data-tips-title>How to explore</h2>
+    <ul class="tips__list">
+      <li><b>Scroll or swipe up</b> to walk the lanes. Stop, and the walk stops with you.</li>
+      <li><b>Tap a house, shop or the temple</b> to step inside. Tap unlit diyas to light them.</li>
+      <li><b>Drag</b> to look around. <b>Tap the sky</b> to send up a rocket.</li>
+      <li><b>✦ Explore</b> (top right) has everything to do: make it yours, the five days, the aarti, your name in the sky, invites and your Diwali card.</li>
+    </ul>
+    <button class="btn btn--solid" type="button" data-tips-close>Chalo, let's go</button>
+  </div>
+  <div class="tips link-card" data-link-card hidden role="dialog" aria-labelledby="link-title">
+    <p class="tips__kicker" lang="hi">यह जगह भेजें</p>
+    <h2 class="tips__title" id="link-title">Share this place</h2>
+    <input class="link-card__url" readonly aria-label="Link to this place">
+    <div class="sheet__actions">
+      <button class="btn btn--ghost" type="button" data-link-close>Close</button>
+      <button class="btn btn--solid" type="button" data-link-copy>Copy link</button>
+    </div>
+  </div>
+  <dialog class="sheet yours-sheet" data-yours aria-labelledby="yours-title">
+    <form class="sheet__inner" data-yours-form>
+      <header class="sheet__head">
+        <div>
+          <p class="sheet__kicker"><span lang="hi">मेरी दिवाली</span> · make it yours</p>
+          <h2 class="sheet__title" id="yours-title">Your Diwali, your village</h2>
+        </div>
+        <button class="sheet__close" type="button" data-yours-close aria-label="Close">×</button>
+      </header>
+      <p class="yours__note">Everything here stays in this browser only.</p>
+      <fieldset class="yours__group">
+        <legend>You and your family</legend>
+        <div class="yours__grid">
+          <label class="field"><span>Your name</span><input name="name" maxlength="22" autocomplete="given-name" placeholder="e.g. Abhay"></label>
+          <label class="field"><span>Family name, for your house</span><input name="surname" maxlength="18" autocomplete="family-name" placeholder="e.g. Tiwari, or तिवारी"></label>
+          <label class="field"><span><span lang="hi">माँ</span> · Mother</span><input name="maa" maxlength="16" placeholder="Maa"></label>
+          <label class="field"><span><span lang="hi">पापा</span> · Father</span><input name="papa" maxlength="16" placeholder="Papa"></label>
+          <label class="field"><span><span lang="hi">दादी / नानी</span> · Grandmother</span><input name="dadi" maxlength="16" placeholder="Dadi"></label>
+          <label class="field"><span><span lang="hi">भाई / बहन</span> · Brother or sister</span><input name="sib" maxlength="16" placeholder="Didi"></label>
+        </div>
+      </fieldset>
+      <fieldset class="yours__group">
+        <legend>Where your family celebrates</legend>
+        <select name="region" class="yours__select">
+          <option value="north">North India · UP, Bihar, Rajasthan, MP</option>
+          <option value="bengal">Bengal · Kali Puja night</option>
+          <option value="maharashtra">Maharashtra · kandil, faral, killa</option>
+          <option value="gujarat">Gujarat · Diwali and Saal Mubarak</option>
+          <option value="south">South India · Naraka Chaturdashi</option>
+        </select>
+      </fieldset>
+      <fieldset class="yours__group">
+        <legend>Your house in the village</legend>
+        <div class="yours__grid">
+          <label class="field"><span>Rangoli at your door</span><select name="rgStyle" class="yours__select" data-my-rg-styles></select></label>
+          <label class="field"><span>Rangoli colours</span><select name="rgPalette" class="yours__select" data-my-rg-palettes></select></label>
+        </div>
+        <div class="yours__swatches" role="radiogroup" aria-label="Kandil colour" data-kandil></div>
+      </fieldset>
+      <fieldset class="yours__group">
+        <legend>Comfort</legend>
+        <div class="yours__grid">
+          <label class="field"><span>Story language</span><select name="lang" class="yours__select"><option value="both">Hindi and English</option><option value="hi">हिन्दी</option><option value="en">English</option></select></label>
+          <label class="field"><span>Text size</span><select name="text" class="yours__select"><option value="normal">Normal</option><option value="large">Large</option></select></label>
+        </div>
+        <label class="yours__check"><input type="checkbox" name="calm"> <span>Calm mode: skip the drone flight, no screen shake or flashes</span></label>
+      </fieldset>
+      <div class="sheet__actions">
+        <button class="btn btn--ghost" type="button" data-yours-close>Cancel</button>
+        <button class="btn btn--solid" type="submit">Save · सहेजें</button>
+      </div>
+    </form>
+  </dialog>
+  <dialog class="sheet wish-sheet" data-float aria-labelledby="float-title">
+    <form class="sheet__inner" data-float-form>
+      <header class="sheet__head">
+        <div>
+          <p class="sheet__kicker"><span lang="hi">याद का दीया</span> · a diya on the water</p>
+          <h2 class="sheet__title" id="float-title">Float a diya for someone</h2>
+        </div>
+        <button class="sheet__close" type="button" data-float-close aria-label="Close">×</button>
+      </header>
+      <p class="yours__note">At the ghat, diyas float out on leaf boats for those we remember: grandparents, ancestors, anyone you miss tonight. Their name stays on the water each time you come back. It stays in this browser only.</p>
+      <label class="field"><span>Whose name should it carry? (optional)</span><input name="who" maxlength="22" placeholder="e.g. Nanaji, or दादाजी" autocomplete="off"></label>
+      <div class="sheet__actions">
+        <button class="btn btn--ghost" type="button" data-float-plain>Just float a diya</button>
+        <button class="btn btn--solid" type="submit">Float it with their name</button>
+      </div>
+    </form>
+  </dialog>
+  <dialog class="sheet wish-sheet" data-gift aria-labelledby="gift-title">
+    <form class="sheet__inner" data-gift-form>
+      <header class="sheet__head">
+        <div>
+          <p class="sheet__kicker"><span lang="hi">मिठाई का डिब्बा</span> · a box of sweets</p>
+          <h2 class="sheet__title" id="gift-title">Send a mithai box</h2>
+        </div>
+        <button class="sheet__close" type="button" data-gift-close aria-label="Close">×</button>
+      </header>
+      <label class="field"><span>Who is it for?</span><input name="to" maxlength="22" required placeholder="e.g. Nani, or Priya"></label>
+      <fieldset class="yours__group"><legend>Fill the box (up to six)</legend><div class="gift__sweets" data-gift-sweets></div></fieldset>
+      <fieldset class="yours__group"><legend>The box</legend><div class="gift__colours" data-gift-colours></div></fieldset>
+      <label class="field"><span>A message (optional)</span><input name="msg" maxlength="90" placeholder="e.g. Wish I was there with you this Diwali"></label>
+      <p class="yours__note">They open a link and find your box waiting, to tap open. The names, sweets and message travel inside the link, so only send it to them.</p>
+      <div class="sheet__actions">
+        <button class="btn btn--ghost" type="button" data-gift-close>Cancel</button>
+        <button class="btn btn--solid" type="submit">Pack it and send</button>
+      </div>
+    </form>
+  </dialog>
+  <dialog class="sheet wish-sheet" data-invite aria-labelledby="invite-title">
+    <form class="sheet__inner" data-invite-form>
+      <header class="sheet__head">
+        <div>
+          <p class="sheet__kicker"><span lang="hi">न्योता भेजें</span> · invite someone</p>
+          <h2 class="sheet__title" id="invite-title">Invite someone to your village</h2>
+        </div>
+        <button class="sheet__close" type="button" data-invite-close aria-label="Close">×</button>
+      </header>
+      <label class="field"><span>Who is it for?</span><input name="to" maxlength="22" required placeholder="e.g. Dadi, or Rahul"></label>
+      <div class="invite__photo">
+        <label class="invite__pick" data-invite-pick>
+          <input type="file" accept="image/*" data-invite-photo>
+          <span class="invite__thumb" data-invite-thumb aria-hidden="true">+</span>
+          <span><b>Add a photo</b><small>Optional. It becomes the cover of their invite.</small></span>
+        </label>
+        <button class="btn btn--ghost" type="button" data-invite-photo-clear hidden>Remove photo</button>
+      </div>
+      <p class="yours__note">You get an invite card to send with the link. When they open it, the photo is the cover of their welcome, they're greeted by name, and their name is written in fireworks over the village. Their name, yours and a small copy of the photo travel inside the link, so only send it to them.</p>
+      <div class="sheet__actions">
+        <button class="btn btn--ghost" type="button" data-invite-close>Cancel</button>
+        <button class="btn btn--solid" type="submit">Make the invite link</button>
+      </div>
+    </form>
+  </dialog>
+  <dialog class="places days" data-days aria-labelledby="days-title">
+    <div class="places__inner">
+      <button class="places__close" type="button" data-days-close aria-label="Close">×</button>
+      <p class="tips__kicker" lang="hi">दीपोत्सव के पाँच दिन</p>
+      <h2 id="days-title">Five days of Diwali</h2>
+      <ol class="places__list days__list" data-days-list></ol>
+    </div>
+  </dialog>
+  <dialog class="sheet photo-sheet" data-photo-dialog aria-labelledby="photo-title">
+    <div class="sheet__inner">
+      <header class="sheet__head">
+        <div>
+          <p class="sheet__kicker"><span lang="hi">दिवाली की तस्वीर</span> · your Diwali picture</p>
+          <h2 class="sheet__title" id="photo-title">Choose a frame</h2>
+        </div>
+        <button class="sheet__close" type="button" data-photo-close aria-label="Close">×</button>
+      </header>
+      <img class="photo__preview" data-photo-preview alt="Your picture of the village with a Diwali frame">
+      <div class="photo__frames" role="radiogroup" aria-label="Frame" data-photo-frames>
+        <button type="button" role="radio" aria-checked="true" data-frame="0"><span lang="hi">गेंदा</span> Marigold</button>
+        <button type="button" role="radio" aria-checked="false" data-frame="1"><span lang="hi">रंगोली</span> Rangoli</button>
+        <button type="button" role="radio" aria-checked="false" data-frame="2"><span lang="hi">सादा</span> Simple</button>
+      </div>
+      <div class="photo__link" data-photo-linkrow hidden>
+        <input readonly aria-label="Invite link" data-photo-linkurl>
+        <button class="btn btn--ghost" type="button" data-photo-linkcopy>Copy invite link</button>
+      </div>
+      <div class="sheet__actions">
+        <button class="btn btn--ghost" type="button" data-photo-share hidden>Share</button>
+        <button class="btn btn--solid" type="button" data-photo-save>Save picture</button>
+      </div>
+    </div>
+  </dialog>
+  <div class="game" data-game hidden role="dialog" aria-labelledby="game-title">
+    <button class="sheet__close game__close" type="button" data-game-close aria-label="Close">×</button>
+    <p class="tips__kicker" data-game-kicker></p>
+    <h2 class="tips__title" id="game-title" data-game-title></h2>
+    <div data-game-body></div>
+  </div>
+  <div class="write-bar share-bar" data-share-bar hidden>
+    <span lang="hi">मिठाई का डिब्बा</span>
+    <b data-share-left>8 left</b>
+    <button class="btn btn--solid" type="button" data-share-done>Done</button>
+  </div>
+  <div class="write-bar" data-write-bar hidden>
+    <span lang="hi">फुलझड़ी से लिखो</span>
+    <button class="btn btn--ghost" type="button" data-write-clear>Clear</button>
+    <button class="btn btn--ghost" type="button" data-write-photo>Photo</button>
+    <button class="btn btn--solid" type="button" data-write-done>Done</button>
+  </div>
+  <button class="card-btn" type="button" data-card hidden><span lang="hi">कार्ड सहेजें</span> · Save this greeting card</button>
+
+  <noscript><p class="noscript">This village is built live in your browser and needs JavaScript and WebGL.</p></noscript>
+
+  <script src="js/sound.js"></script>
+  <script src="js/flame.js"></script>
+  <script src="js/goods.js"></script>
+  <script type="module" src="js/tour/main.js"></script>
+</body>
+</html>
